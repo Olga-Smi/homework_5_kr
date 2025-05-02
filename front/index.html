@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="left-column">
+            <div id="saved-forms-wrap">
+
+            </div>
+            <input type="button" value="Заполнить" onclick="getFillForm()">
+            <input type="button" value="Очистить" onclick="getCleanData()">
+        </div>
+        <div class="right-column">
+            <form id="form">
+                <span>
+                    <label for="select-method">Метод</label>
+                    <select name="method" id="select-method">
+                        <option value="">Выберете метод</option>
+                        <option value="get">GET</option>
+                        <option value="post">POST</option>
+                        <option value="patch">PATCH</option>
+                        <option value="put">PUT</option>
+                        <option value="options">OPTIONS</option>
+                    </select>
+                </span>
+                <span>
+                    <label for="URL">URL</label>
+                    <input type="text" id="URL" name="URL" placeholder="Введите URL">
+                </span>
+                <div id="add-params" class="content">
+                    <p class="p-header">Параметры</p>
+                    <span onclick="getNewParam()">Добавить параметр</span>
+                </div>
+                <div id="add-body", class="content">
+                    <p class="p-header">Тело запроса</p>
+                    <textarea name="body" id="body"></textarea>
+                </div>
+                <div id="add-titles">
+                    <p class="p-header">Заголовки</p>
+                    <span onclick="getNewTitle()">Добавить заголовок</span>
+                </div>
+
+                <br /> <br />
+                <input type="button" value="Сохранить запрос" onclick="getSaveForm()">
+                <input type="submit" value="Отправить запрос">
+                <input type="button" value="Очистить форму" onclick="getCleanForm()">
+            </form>
+
+            <div id="response-wr">
+                <div id="all-response">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
