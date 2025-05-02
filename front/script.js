@@ -147,6 +147,8 @@ form.addEventListener("submit", async function (eo) {
 
 function getCleanForm() {
   form.reset();
+  allResponse.innerHTML = '';
+  paramsWrap.style.display = "none";
 }
 
 async function getSaveForm() {
